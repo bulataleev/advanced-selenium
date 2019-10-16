@@ -1,6 +1,7 @@
 package com.herokuapp.theinternet;
 
 import com.herokuapp.theInternet.base.BaseTest;
+import com.herokuapp.theInternet.base.TestUtilities;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class PositiveTests extends BaseTest {
+public class PositiveTests extends TestUtilities {
 
 	@Test
 	public void logInTest() {

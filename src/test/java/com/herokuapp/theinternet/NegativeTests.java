@@ -1,6 +1,7 @@
 package com.herokuapp.theinternet;
 
 import com.herokuapp.theInternet.base.BaseTest;
+import com.herokuapp.theInternet.base.TestUtilities;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,7 +13,7 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class NegativeTests extends BaseTest {
+public class NegativeTests extends TestUtilities {
 
 
 	@Parameters({ "username", "password", "expectedMessage" })
