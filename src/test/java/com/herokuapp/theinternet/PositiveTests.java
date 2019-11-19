@@ -15,30 +15,37 @@ public class PositiveTests extends TestUtilities {
 
 	@Test
 	public void logInTest() {
-		System.out.println("Starting logIn test");
+		log.info("Starting logIn test");
 		baseTestParam = "BaseTest class field";
+
 		// open main page
 		String url = "http://the-internet.herokuapp.com/";
 		driver.get(url);
-		System.out.println(baseTestParam);
-		System.out.println("Main page is opened.");
+		log.info(baseTestParam);
+		log.info("Main page is opened.");
+
 		// Click on Form Authentication link
 		driver.findElement(By.linkText("Form Authentication")).click();
+
 		// enter username and password
 		driver.findElement(By.id("username")).sendKeys("tomsmith");
 		driver.findElement(By.id("password")).sendKeys("SuperSecretPassword!");
 		WebDriverWait wait = new WebDriverWait(driver, 10);
+
 		// push log in button
 		WebElement logInButton = driver.findElement(By.className("radius"));
 		wait.until(ExpectedConditions.elementToBeClickable(logInButton));
 		logInButton.click();
+
 		// verifications
 		// new url
 		String expectedUrl = "http://the-internet.herokuapp.com/secure";
 		Assert.assertEquals(driver.getCurrentUrl(), expectedUrl);
+
 		// log out button is visible
 		Assert.assertTrue(driver.findElement(By.xpath("//a[@class='button secondary radius']")).isDisplayed(),
 				"logOutButton is not visible.");
+
 		// Successful log in message
 		String expectedSuccessMessage = "You logged into a secure area!";
 		String actualSuccessMessage = driver.findElement(By.id("flash")).getText();
