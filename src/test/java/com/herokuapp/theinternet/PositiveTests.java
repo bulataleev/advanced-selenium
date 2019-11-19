@@ -16,10 +16,11 @@ public class PositiveTests extends TestUtilities {
 	@Test
 	public void logInTest() {
 		System.out.println("Starting logIn test");
-
+		baseTestParam = "BaseTest class field";
 		// open main page
 		String url = "http://the-internet.herokuapp.com/";
 		driver.get(url);
+		System.out.println(baseTestParam);
 		System.out.println("Main page is opened.");
 		// Click on Form Authentication link
 		driver.findElement(By.linkText("Form Authentication")).click();
