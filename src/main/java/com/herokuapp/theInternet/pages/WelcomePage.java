@@ -11,6 +11,7 @@ public class WelcomePage {
     private By authenticationLocator = By.linkText("Form Authentication");
 
     private String pageURL = "https://the-internet.herokuapp.com/";
+
     public WelcomePage(WebDriver driver, Logger log){
         this.driver = driver;
         this.log = log;
