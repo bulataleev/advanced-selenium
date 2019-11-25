@@ -4,7 +4,7 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class WelcomePage {
+public class WelcomePage extends BasePageObject{
     private WebDriver driver;
     private Logger log;
 
@@ -13,8 +13,7 @@ public class WelcomePage {
     private String pageURL = "https://the-internet.herokuapp.com/";
 
     public WelcomePage(WebDriver driver, Logger log){
-        this.driver = driver;
-        this.log = log;
+        super(driver, log);
     }
 
     public void openPage(){
