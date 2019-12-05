@@ -5,28 +5,29 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class WelcomePage extends BasePageObject{
-    private WebDriver driver;
-    private Logger log;
+    private String pageUrl = "http://the-internet.herokuapp.com/";
 
-    private By authenticationLocator = By.linkText("Form Authentication");
+    private By formAuthenticationLinkLocator = By.linkText("Form Authentication");
+    private By checkboxesLinkLocator = By.linkText("Checkboxes");
 
-    private String pageURL = "https://the-internet.herokuapp.com/";
-
-    public WelcomePage(WebDriver driver, Logger log){
+    public WelcomePage(WebDriver driver, Logger log) {
         super(driver, log);
     }
 
-    public void openPage(){
-        log.info("opening the page: " + pageURL);
-        driver.get(pageURL);
-        if(driver.getCurrentUrl() == pageURL){
-            log.info("Page is opened! ");
-        }
+    /** Open WelcomePage with it's url */
+    public void openPage() {
+        log.info("Opening page: " + pageUrl);
+        openUrl(pageUrl);
+        log.info("Page opened!");
     }
 
-    public LoginPage clickAuthenticationForm(){
-        log.info("clicking authentication form button");
-        driver.findElement(authenticationLocator).click();
-        return new LoginPage(driver,log);
+    /** Open LoginPage by clicking on Form Authentication Link */
+    public LoginPage clickFormAuthenticationLink() {
+        log.info("Clicking Form Authentication link on Welcome Page");
+        click(formAuthenticationLinkLocator);
+        return new LoginPage(driver, log);
     }
+
+
+
 }

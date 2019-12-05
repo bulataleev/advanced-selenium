@@ -5,8 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPage extends BasePageObject {
-    private WebDriver driver;
-    private Logger log;
     private By usernameLocator = By.id("username");
     private By passwordLocator = By.name("password");
     private By logInButtonLocator = By.tagName("button");

@@ -5,12 +5,6 @@ import com.herokuapp.theInternet.base.TestUtilities;
 import com.herokuapp.theInternet.pages.LoginPage;
 import com.herokuapp.theInternet.pages.SecureAreaPage;
 import com.herokuapp.theInternet.pages.WelcomePage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -25,7 +19,7 @@ public class PositiveTests extends TestUtilities {
 		welcomePage.openPage();
 
 		// Click on Form Authentication link
-		LoginPage loginPage = welcomePage.clickAuthenticationForm();
+		LoginPage loginPage = welcomePage.clickFormAuthenticationLink();
 
 		// execute log in
 		SecureAreaPage secureAreaPage = loginPage.logIn("tomsmith", "SuperSecretPassword!");
