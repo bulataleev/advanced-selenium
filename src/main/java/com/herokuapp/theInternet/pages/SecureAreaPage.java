@@ -20,6 +20,10 @@ public class SecureAreaPage extends BasePageObject {
     public String getPageUrl() {
         return pageUrl;
     }
+    public String getCurrentUrl(){
+        String currentUrl = driver.getCurrentUrl();
+        return currentUrl;
+    }
 
     /** Verification if logOutButton is visible on the page */
     public boolean isLogOutButtonVisible() {
