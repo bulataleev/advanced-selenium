@@ -8,7 +8,7 @@ import com.herokuapp.theInternet.pages.WelcomePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class PositiveTests extends TestUtilities {
+public class PositiveLoginTests extends TestUtilities {
 
 	@Test
 	public void logInTest() {
