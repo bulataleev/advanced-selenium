@@ -1,13 +1,13 @@
 package com.herokuapp.theInternet.pages;
 
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.Iterator;
+import java.util.Set;
 
 public class BasePageObject {
     protected WebDriver driver;
@@ -55,6 +55,36 @@ public class BasePageObject {
             } catch (StaleElementReferenceException e) {
             }
             attempts++;
+        }
+    }
+    /** Wait for alert present and then switch to it */
+    protected Alert switchToAlert() {
+        WebDriverWait wait = new WebDriverWait(driver, 5);
+        wait.until(ExpectedConditions.alertIsPresent());
+        return driver.switchTo().alert();
+    }
+
+    public String getCurrentPageTitle() {
+        return driver.getTitle();
+    }
+
+    public String getCurrentPageSource() {return driver.getPageSource();}
+
+    public void switchToWindowWithTitle(String expectedTitle) {
+        // Switching to new window
+        String firstWindow = driver.getWindowHandle();
+
+        Set<String> allWindows = driver.getWindowHandles();
+        Iterator<String> windowsIterator = allWindows.iterator();
+
+        while (windowsIterator.hasNext()) {
+            String windowHandle = windowsIterator.next().toString();
+            if (!windowHandle.equals(firstWindow)) {
+                driver.switchTo().window(windowHandle);
+                if (getCurrentPageTitle().equals(expectedTitle)) {
+                    break;
+                }
+            }
         }
     }
 }
