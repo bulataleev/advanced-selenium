@@ -8,7 +8,7 @@
 		<parameter name="expectedMessage" value="Your username is invalid!"></parameter>
 		<parameter name="browser" value="chrome"></parameter>
 		<classes>
-			<class name="com.herokuapp.theinternet.NegativeTests"></class>
+			<class name="com.herokuapp.theinternet.NegativeLoginTests"></class>
 		</classes>
 	</test>
 	
@@ -18,7 +18,7 @@
 		<parameter name="expectedMessage" value="Your username is invalid!"></parameter>
 		<parameter name="browser" value="firefox"></parameter>
 		<classes>
-			<class name="com.herokuapp.theinternet.NegativeTests"></class>
+			<class name="com.herokuapp.theinternet.NegativeLoginTests"></class>
 		</classes>
 	</test>
 	
@@ -28,7 +28,7 @@
 		<parameter name="expectedMessage" value="Your password is invalid!"></parameter>
 		<parameter name="browser" value="chrome"></parameter>
 		<classes>
-			<class name="com.herokuapp.theinternet.NegativeTests"></class>
+			<class name="com.herokuapp.theinternet.NegativeLoginTests"></class>
 		</classes>
 	</test>
 	
@@ -38,7 +38,7 @@
 		<parameter name="expectedMessage" value="Your password is invalid!"></parameter>
 		<parameter name="browser" value="firefox"></parameter>
 		<classes>
-			<class name="com.herokuapp.theinternet.NegativeTests">
+			<class name="com.herokuapp.theinternet.NegativeLoginTests">
 			</class>
 		</classes>
 	</test>
