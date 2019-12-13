@@ -7,13 +7,13 @@
     <parameter name="expectedMessage" value="Your username is invalid!"/>
     <parameter name="username" value="incorrectUsername"/>
     <classes>
-      <class name="com.herokuapp.theinternet.NegativeLoginTests">
+      <class name="com.herokuapp.theinternet.NegativeLoginNotCsvTests">
         <methods>
           <include name="negativeTest"/>
           <include name="setUp"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.herokuapp.theinternet.NegativeLoginTests -->
+      </class> <!-- com.herokuapp.theinternet.NegativeLoginNotCsvTests -->
     </classes>
   </test> <!-- NegativeUsernameTest-FF(failed) -->
 </suite> <!-- Failed suite [NegativeTestSuite] -->
