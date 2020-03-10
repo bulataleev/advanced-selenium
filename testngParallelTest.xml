@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="classes">
+    <test name="parallel tests">
+        <classes>
+            <class name="ChromeStandaloneTest"/>
+            <class name="ChromeStandaloneTest2"/>
+            <class name="ChromeStandaloneTest3"/>
+        </classes>
+    </test>
+</suite>
