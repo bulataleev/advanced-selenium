@@ -1,3 +1,3 @@
 # advanced-selenium
-advanced-selenium-workflow  \n
-playaround with dockerhub and nodes (selenium grid)
+advanced-selenium-workflow 
+play around with dockerhub and nodes (selenium grid)
